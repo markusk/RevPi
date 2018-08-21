@@ -10,6 +10,7 @@
 
   <body>
     <p>Better Stronger Faster.</p>
+    <p id="relais">Hier das Ergebnis.</p>
 
       <script>
         $(document).ready(function() {
@@ -17,12 +18,10 @@
           $.ajax({
             url: "/piTest",
             data: {
-              readWrite: "-w",
-              relais: "Brunnen,",
-              anAus: "1"
+              myType: "-w Brunnen,1"
             },
             success: function( result ) {
-              $( "#weather-temp" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+              $( "#relais" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
             }
           });
 
