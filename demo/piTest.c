@@ -550,7 +550,9 @@ void writeVariableValue(char *pszVariableName, uint32_t i32uValue)
     strncpy(sPiVariable.strVarName, pszVariableName, sizeof(sPiVariable.strVarName));
     rc = piControlGetVariableInfo(&sPiVariable);
     if (rc < 0) {
-	printf("Cannot find variable '%s'\n", pszVariableName);
+      // cgi-bin compatible output...
+      printf("Content-Type: text/html;charset=utf-8");
+	    printf("Cannot find variable '%s'\n", pszVariableName);
 	return;
     }
 
@@ -560,6 +562,8 @@ void writeVariableValue(char *pszVariableName, uint32_t i32uValue)
 	sPIValue.i8uValue = i32uValue;
 	rc = piControlSetBitValue(&sPIValue);
 	if (rc < 0)
+      // cgi-bin compatible output...
+      printf("Content-Type: text/html;charset=utf-8");
 	    printf("Set bit error %s\n", getWriteError(rc));
 	else
   {
@@ -571,14 +575,20 @@ void writeVariableValue(char *pszVariableName, uint32_t i32uValue)
 	i8uValue = i32uValue;
 	rc = piControlWrite(sPiVariable.i16uAddress, 1, (uint8_t *) & i8uValue);
 	if (rc < 0)
+      // cgi-bin compatible output...
+      printf("Content-Type: text/html;charset=utf-8");
 	    printf("Write error %s\n", getWriteError(rc));
 	else
+      // cgi-bin compatible output...
+      printf("Content-Type: text/html;charset=utf-8");
 	    printf("Write value %d dez (=%02x hex) to offset %d.\n", i8uValue, i8uValue,
 		   sPiVariable.i16uAddress);
     } else if (sPiVariable.i16uLength == 16) {
 	i16uValue = i32uValue;
 	rc = piControlWrite(sPiVariable.i16uAddress, 2, (uint8_t *) & i16uValue);
 	if (rc < 0)
+       // cgi-bin compatible output...
+      printf("Content-Type: text/html;charset=utf-8");
 	    printf("Write error %s\n", getWriteError(rc));
 	else
 	    printf("Write value %d dez (=%04x hex) to offset %d.\n", i16uValue, i16uValue,
@@ -586,8 +596,12 @@ void writeVariableValue(char *pszVariableName, uint32_t i32uValue)
     } else if (sPiVariable.i16uLength == 32) {
 	rc = piControlWrite(sPiVariable.i16uAddress, 4, (uint8_t *) & i32uValue);
 	if (rc < 0)
+      // cgi-bin compatible output...
+      printf("Content-Type: text/html;charset=utf-8");
 	    printf("Write error %s\n", getWriteError(rc));
 	else
+      // cgi-bin compatible output...
+      printf("Content-Type: text/html;charset=utf-8");
 	    printf("Write value %d dez (=%08x hex) to offset %d.\n", i32uValue, i32uValue,
 		   sPiVariable.i16uAddress);
     }
@@ -704,6 +718,9 @@ void showVariableInfo(char *pszVariableName)
  ************************************************************************************/
 void printHelp(char *programname)
 {
+    // cgi-bin compatible output...
+    printf("Content-Type: text/html;charset=utf-8");
+
     printf("Usage: %s [OPTION]\n", programname);
     printf("- Shows infos from RevPiCore control process\n");
     printf("- Reads values of RevPiCore process image\n");
@@ -972,13 +989,13 @@ int main(int argc, char *argv[])
         case 'c':
             {
                 int addr, serial;
-                
+
                 rc = sscanf(optarg, "%d,%d", &addr, &serial);
                 if (rc != 2) {
                     printf("Wrong arguments for set serial function\n");
                     return 0;
                 }
-                
+
                 rc = piControlSetSerial(addr, serial);
             }
             break;
