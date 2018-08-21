@@ -566,10 +566,11 @@ void writeVariableValue(char *pszVariableName, uint32_t i32uValue)
       printf("Content-Type: text/html;charset=utf-8");
 	    printf("Set bit error %s\n", getWriteError(rc));
 	else
-      // cgi-bin compatible output...
+  {
       printf("Content-Type: text/html;charset=utf-8");
 	    printf("Set bit %d on byte at offset %d. Value %d\n", sPIValue.i8uBit, sPIValue.i16uAddress,
 		   sPIValue.i8uValue);
+     }
     } else if (sPiVariable.i16uLength == 8) {
 	i8uValue = i32uValue;
 	rc = piControlWrite(sPiVariable.i16uAddress, 1, (uint8_t *) & i8uValue);
