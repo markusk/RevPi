@@ -14,6 +14,18 @@
       <script>
         $(document).ready(function() {
 
+          $.ajax({
+            url: "/piTest",
+            data: {
+              readWrite: "-w",
+              relais: "Brunnen,",
+              anAus: "1"
+            },
+            success: function( result ) {
+              $( "#weather-temp" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+            }
+          });
+
         });
       </script>
     </body>
