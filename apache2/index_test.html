@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Markus' SmartHome mit jQuery</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <style>
+    </style>
+  </head>
+
+  <body>
+    <h1>Markus' SmartHome.</h1>
+    <p >Und hier der Rückgabewert:</p>
+    <p id="relais">Ergebnis.</p>
+
+      <script>
+        $(document).ready(function() {
+
+          $.ajax({
+            url: "/cgi-bin/test.cgi",
+            success: function( result ) {
+              $( "#relais" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+            },
+            error: function (xhr, status, error) {
+              alert(error.responseTextss);
+            }
+
+          });
+
+        });
+      </script>
+    </body>
+</html>
