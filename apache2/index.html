@@ -17,13 +17,14 @@
         $(document).ready(function() {
 
           $.ajax({
-            url: "/cgi-bin/piTest",
-            data: {
-              myType: "-w Brunnen,1"
-            },
+            url: "/cgi-bin/test.cgi",
             success: function( result ) {
               $( "#relais" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+            },
+            error: function (xhr, status, error) {
+              alert(error.responseTextss);
             }
+		
           });
 
         });
