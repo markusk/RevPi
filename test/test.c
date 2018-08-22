@@ -12,8 +12,8 @@
 
 int main(int argc, char *argv[])
 {
-  printf("Content-Type: text/html;charset=utf-8");
-  printf("hello world.\n");
+  printf("Content-Type: text/html;charset=utf-8\n\n");
+  printf("hello world.\n\n");
 
 
   return 0;
