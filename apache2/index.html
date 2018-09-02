@@ -17,11 +17,11 @@
     <div class="text-center">
     <h1>Markus' SmartHome.</h1>
     <p >Und hier der Rückgabewert:</p>
-    <p id="relais">Ergebnis.</p>
+    <p id="relais"> Ergebnis.</p>
 
 
     <!-- Buttons -->
-    <div class="btn-group-toggle" data-toggle="buttons" value="brunnen">
+    <div class="btn-group-toggle" data-toggle="buttons" value="brunnen" id="brunnen">
       <label class="btn btn-secondary active">
         <input type="checkbox" checked autocomplete="off"> Brunnen
       </label>
@@ -49,7 +49,8 @@
             }
 
             <!-- when button pressed: -->
-            $('button.btn-group-toggle').click(function() {
+            $("#brunnen").click(function() {
+                alert('Hallo :)');
                 var formData = {
                     'id_mhs': this.value
                 };
