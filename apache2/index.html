@@ -37,7 +37,7 @@
       <!-- Information messages (return codes) -->
       <p></p>
       <p></p>
-      <div class="alert alert-success" role="alert" id="relais">
+      <div class="alert alert-secondary" role="alert" id="relais">
         Hier erscheint der Rückgabewert.
       </div>
     </div>
@@ -49,6 +49,7 @@
                 $.ajax(
                   {url: "/cgi-bin/test.cgi",
                   success: function( result ) {
+                    $( "#relais" ).toggleClass('alert-secondary alert-success');
                     $( "#relais" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
                     $( "#lblBrunnen" ).html("Brunnen AUS");
                 }});
