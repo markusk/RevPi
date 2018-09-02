@@ -48,20 +48,18 @@
               alert(error.responseTextss);
             }
 
+            <!-- when button pressed: -->
+            $('button.btn-group-toggle').click(function() {
+                var formData = {
+                    'id_mhs': this.value
+                };
+                $( "#relais" ).html( "<strong> Button " + value + "</strong> gedrückt." );
+            });
+
           });
 
         });
       </script>
-
-
-      <!-- when button pressed: -->
-      $('button.btn-group-toggle').click(function() {
-          var formData = {
-              'id_mhs': this.value
-          };
-          $( "#relais" ).html( "<strong> Button " + value + "</strong> gedrückt." );
-      });
-
 
       <!-- Required for bootstrap: -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
