@@ -39,26 +39,13 @@
       <script>
         $(document).ready(function() {
 
-          $.ajax({
-            url: "/cgi-bin/test.cgi",
-            success: function( result ) {
-              $( "#relais" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
-            },
-            error: function (xhr, status, error) {
-              alert(error.responseTextss);
-            }
-
-            <!-- when button pressed: -->
             $("#brunnen").click(function(){
-                alert('Hallo :)');
-                $( "#relais" ).html( "<strong> Button " + value + "</strong> gedrückt." );
-                $.ajax({url: "demo_test.txt", success: function(result){
-                  $( "#relais" ).html( "<strong> Button " + value + "</strong> gedrückt." );
+                $.ajax(
+                  {url: "/cgi-bin/test.cgi",
+                  success: function( result ) {
+                    $( "#relais" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
                 }});
             });
-
-          });
-
         });
       </script>
 
