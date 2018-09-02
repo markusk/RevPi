@@ -49,12 +49,12 @@
             }
 
             <!-- when button pressed: -->
-            $("#brunnen").click(function() {
+            $("#brunnen").click(function(){
                 alert('Hallo :)');
-                var formData = {
-                    'id_mhs': this.value
-                };
                 $( "#relais" ).html( "<strong> Button " + value + "</strong> gedrückt." );
+                $.ajax({url: "demo_test.txt", success: function(result){
+                  $( "#relais" ).html( "<strong> Button " + value + "</strong> gedrückt." );
+                }});
             });
 
           });
