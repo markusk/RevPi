@@ -57,6 +57,7 @@
                   {url: "/cgi-bin/test.cgi",
                   success: function( result ) {
                     $( "#btnBrunnen" ).attr('class', 'btn btn-success');
+                    $( "#relais" ).toggleClass('alert-secondary alert-success');
                     $( "#relais" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
                 }});
             });
