@@ -46,7 +46,13 @@
                     $( "#btnBrunnen" ).attr('class', 'btn btn-success');
                     $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
                     $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
-                }});
+                  },
+                  error: function ( result) {
+                    $( "#ergebnis" ).toggleClass('alert-secondary alert-danger');
+                    $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+                  }
+
+              });
             });
 
             $("#btnRasensprenger").click(function(){
