@@ -43,7 +43,7 @@
                 $.ajax(
                   {url: "/cgi-bin/test.cgi",
                   success: function( result ) {
-                    $( "#btnBrunnen" ).attr('class', 'btn btn-success');
+                    $( "#btnBrunnen" ).attr('class', 'btn btn-success btn-lg');
                     $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
                     $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
                   },
@@ -59,7 +59,7 @@
                 $.ajax(
                   {url: "/cgi-bin/test.cgi",
                   success: function( result ) {
-                    $( "#btnRasensprenger" ).attr('class', 'btn btn-success');
+                    $( "#btnRasensprenger" ).attr('class', 'btn btn-success btn-lg');
                     $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
                     $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
                   },
@@ -75,7 +75,7 @@
                 $.ajax(
                   {url: "/cgi-bin/test.cgi",
                   success: function( result ) {
-                    $( "#btnTropfschlauch" ).attr('class', 'btn btn-success');
+                    $( "#btnTropfschlauch" ).attr('class', 'btn btn-success btn-lg');
                     $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
                     $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
                   },
