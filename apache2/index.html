@@ -21,9 +21,9 @@
 
 
     <!-- Buttons -->
-    <div class="btn-group-toggle" data-toggle="buttons" value="brunnen" id="brunnen">
+    <div class="btn-group-toggle" data-toggle="buttons" id="brunnen">
       <label id="lblBrunnen" class="btn btn-secondary active">
-        <input type="checkbox" checked autocomplete="off"> Brunnen EIN
+        <input type="checkbox" checked autocomplete="off"> Brunnen       EIN
       </label>
     </div>
 
@@ -44,7 +44,7 @@
                   {url: "/cgi-bin/test.cgi",
                   success: function( result ) {
                     $( "#relais" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
-                    $( "#lblBrunnen" ).html("Brunnen AUS");
+                    $( "#lblBrunnen" ).html("Brunnen       AUS");
                 }});
             });
         });
