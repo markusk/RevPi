@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <title>Markus' SmartHome mit jQuery</title>
-    <script src="jquery-3.3.1.min.js"></script>
     <style>
     </style>
   </head>
@@ -16,6 +15,11 @@
   <body>
     <div class="text-center">
       <h1>Markus' SmartHome.</h1>
+
+      <!-- Required for bootstrap: -->
+      <script src="jquery-3.3.1.min.js"></script>
+      <script src="popper-1.14.3.min.js"> </script>
+      <script src="bootstrap-4.1.3.min.js"> </script>
 
       <!-- Buttons -->
       <div class="btn-group-toggle" data-toggle="buttons" id="brunnen">
@@ -62,10 +66,5 @@
 
         });
       </script>
-
-      <!-- Required for bootstrap: -->
-      <script src="popper-1.14.3.min.js"> </script>
-      <script src="bootstrap-4.1.3.min.js"> </script>
-
     </body>
 </html>
