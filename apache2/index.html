@@ -16,9 +16,6 @@
   <body>
     <div class="text-center">
     <h1>Markus' SmartHome.</h1>
-    <p >Und hier der Rückgabewert:</p>
-    <p id="relais"> Ergebnis.</p>
-
 
     <!-- Buttons -->
     <div class="btn-group-toggle" data-toggle="buttons" id="brunnen">
@@ -32,6 +29,10 @@
         <input type="checkbox" checked autocomplete="off"> Rasensprenger EIN
       </label>
     </div>
+
+    <!-- Information messages (return codes) -->
+    <p >Und hier der Rückgabewert:</p>
+    <p id="relais"> Ergebnis.</p>
 
     </div>
 
@@ -47,7 +48,7 @@
                     $( "#lblBrunnen" ).html("Brunnen       AUS");
                 }});
             });
-            
+
             $("#rasensprenger").click(function(){
                 $.ajax(
                   {url: "/cgi-bin/test.cgi",
