@@ -27,9 +27,9 @@
       </label>
     </div>
 
-    <div class="btn-group-toggle" data-toggle="buttons" value="rasensprenger">
-      <label class="btn btn-secondary active">
-        <input type="checkbox" checked autocomplete="off"> Rasensprenger
+    <div class="btn-group-toggle" data-toggle="buttons" id="rasensprenger">
+      <label id="lblRasensprenger" class="btn btn-secondary active">
+        <input type="checkbox" checked autocomplete="off"> Rasensprenger EIN
       </label>
     </div>
 
@@ -47,6 +47,16 @@
                     $( "#lblBrunnen" ).html("Brunnen       AUS");
                 }});
             });
+            
+            $("#rasensprenger").click(function(){
+                $.ajax(
+                  {url: "/cgi-bin/test.cgi",
+                  success: function( result ) {
+                    $( "#relais" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+                    $( "#lblRasensprenger" ).html("Rasensprenger AUS");
+                }});
+            });
+
         });
       </script>
 
