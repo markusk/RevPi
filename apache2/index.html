@@ -38,7 +38,7 @@
       <!-- Information messages (return codes) -->
       <p></p>
       <p></p>
-      <div class="alert alert-secondary" role="alert" id="relais">
+      <div id="ergebnis" class="alert alert-secondary" role="alert">
         Hier erscheint der Rückgabewert.
       </div>
     </div>
@@ -51,8 +51,8 @@
                   {url: "/cgi-bin/test.cgi",
                   success: function( result ) {
                     $( "#btnBrunnen" ).attr('class', 'btn btn-success');
-                    $( "#relais" ).toggleClass('alert-secondary alert-success');
-                    $( "#relais" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+                    $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
+                    $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
                 }});
             });
 
@@ -60,8 +60,8 @@
                 $.ajax(
                   {url: "/cgi-bin/test.cgi",
                   success: function( result ) {
-                    $( "#relais" ).toggleClass('alert-secondary alert-success');
-                    $( "#relais" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+                    $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
+                    $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
                     $( "#lblBrunnen" ).html("Brunnen AUS");
                 }});
             });
