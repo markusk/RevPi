@@ -36,9 +36,9 @@
 
       <!-- Button Layout test -->
       <div class="btn-group-vertical" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary">Left</button>
-        <button type="button" class="btn btn-secondary">Middle</button>
-        <button type="button" class="btn btn-secondary">Right</button>
+        <button id="btnBrunnen"       type="button" class="btn btn-secondary">Brunnen</button>
+        <button id="btnRasensprenger" type="button" class="btn btn-secondary">Rasensprenger</button>
+        <button id="btnTropfschlauch" type="button" class="btn btn-secondary">Tropfschlauch</button>
       </div>
 
       <!-- Information messages (return codes) -->
@@ -51,6 +51,15 @@
 
       <script>
         $(document).ready(function() {
+
+            $("#btnBrunnen").click(function(){
+                $.ajax(
+                  {url: "/cgi-bin/test.cgi",
+                  success: function( result ) {
+                    $( "#relais" ).toggleClass('btn btn-secondary btn btn-success');
+                    $( "#relais" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+                }});
+            });
 
             $("#brunnen").click(function(){
                 $.ajax(
