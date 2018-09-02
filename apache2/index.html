@@ -28,13 +28,7 @@
         </label>
       </div>
 
-      <div class="btn-group-toggle" data-toggle="buttons" id="rasensprenger">
-        <label id="lblRasensprenger" class="btn btn-secondary active">
-          <input type="checkbox" checked autocomplete="off"> Rasensprenger EIN
-        </label>
-      </div>
-
-      <!-- Button Layout test -->
+      <!-- New Button Layout -->
       <div class="btn-group-vertical" role="group" aria-label="Basic example">
         <button id="btnBrunnen"       type="button" class="btn btn-secondary">Brunnen</button>
         <button id="btnRasensprenger" type="button" class="btn btn-secondary">Rasensprenger</button>
@@ -69,15 +63,6 @@
                     $( "#relais" ).toggleClass('alert-secondary alert-success');
                     $( "#relais" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
                     $( "#lblBrunnen" ).html("Brunnen AUS");
-                }});
-            });
-
-            $("#rasensprenger").click(function(){
-                $.ajax(
-                  {url: "/cgi-bin/test.cgi",
-                  success: function( result ) {
-                    $( "#relais" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
-                    $( "#lblRasensprenger" ).html("Rasensprenger AUS");
                 }});
             });
 
