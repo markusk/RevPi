@@ -56,13 +56,23 @@
                 }});
             });
 
-            $("#brunnen").click(function(){
+            $("#btnRasensprenger").click(function(){
                 $.ajax(
                   {url: "/cgi-bin/test.cgi",
                   success: function( result ) {
+                    $( "#btnRasensprenger" ).attr('class', 'btn btn-success');
                     $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
                     $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
-                    $( "#lblBrunnen" ).html("Brunnen AUS");
+                }});
+            });
+
+            $("#btnTropfschlauch").click(function(){
+                $.ajax(
+                  {url: "/cgi-bin/test.cgi",
+                  success: function( result ) {
+                    $( "#btnTropfschlauch" ).attr('class', 'btn btn-success');
+                    $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
+                    $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
                 }});
             });
 
