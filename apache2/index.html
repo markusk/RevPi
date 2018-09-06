@@ -24,21 +24,11 @@
       <script src="popper-1.14.3.min.js"> </script>
       <script src="bootstrap-4.1.3.min.js"> </script>
 
-      <!-- NEW niec Switches Group -->
+      <!-- NEW nice Switches Group -->
       <div class="custom-switch custom-switch-label-onoff">
-        <input class="custom-switch-input" id="ADD_ID_HERE" type="checkbox">
-        <label class="custom-switch-btn" for="ADD_ID_HERE"></label>
+        <input class="custom-switch-input" id="swBrunnen" type="checkbox">
+        <label class="custom-switch-btn" for="swBrunnen"></label>
       </div>
-
-      <!-- NEW TOGGLE Button Group -->
-      <div class="btn-group-toggle" data-toggle="buttons">
-	<label id="lblTest" class="btn btn-secondary btn-lg">
-	  <input id="btnTest" type="checkbox" checked autocomplete="off"> Test
-  	</label>
-      </div>
-      <p></p>
-      <div id="myDiv">my div</div>
-      <p></p>
 
       <!-- Large Button Group -->
       <div class="btn-group-vertical" role="group">
@@ -52,19 +42,23 @@
       <div id="ergebnis" class="alert alert-secondary" role="alert">
         Hier erscheint der Rückgabewert.
       </div>
+
+      <p></p>
+      <div id="myDiv">Test</div>
+      <p></p>
     </div>
+
 
       <script>
 
-	$('#btnTest').change(function(){
+	$('#swBrunnen').change(function(){
 	  if($(this).is(":checked")){
 	    $('#myDiv').hide();
-            $( '#lblTest' ).attr('class', 'btn btn-success btn-lg');
 	  } else if($(this).is(":not(:checked)")){
 	    $('#myDiv').show();
-            $( '#lblTest' ).attr('class', 'btn btn-danger btn-lg');
 	  }
 	});
+
 
         $(document).ready(function() {
 
