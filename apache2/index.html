@@ -23,8 +23,8 @@
 
       <!-- NEW TOGGLE Button Group -->
       <div class="btn-group-toggle" data-toggle="buttons">
-	<label class="btn btn-secondary btn-lg active">
-	  <input id="btnTest" type="checkbox" checked autocomplete="off"> Checked
+	<label id="lblTest" class="btn btn-secondary btn-lg active">
+	  <input id="btnTest" type="checkbox" checked autocomplete="off"> Test
   	</label>
       </div>
       <p></p>
@@ -50,10 +50,10 @@
 	$('#btnTest').change(function(){
 	  if($(this).is(":checked")){
 	    $('#myDiv').show();
-            $( "#btnTest" ).attr('class', 'btn btn-success btn-lg active');
+            $( '#lblTest' ).attr('class', 'btn btn-success btn-lg active');
 	  } else if($(this).is(":not(:checked)")){
 	    $('#myDiv').hide();
-            $( "#btnTest" ).attr('class', 'btn btn-secondary btn-lg active');
+            $( '#lblTest' ).attr('class', 'btn btn-danger btn-lg active');
 	  }
 	});
 
