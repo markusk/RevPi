@@ -7,6 +7,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+    <!-- Bootstrap Toggle CSS -->
+    <link rel="stylesheet" href="bootstrap-toggle-2.2.2.min.css">
+
     <title>Markus' SmartHome</title>
     <style>
     </style>
@@ -16,10 +19,26 @@
     <div class="text-center">
       <h1>Markus' SmartHome</h1>
 
-      <!-- Required for bootstrap: -->
+      <!-- Required for Bootstrap -->
       <script src="jquery-3.3.1.min.js"></script>
       <script src="popper-1.14.3.min.js"> </script>
       <script src="bootstrap-4.1.3.min.js"> </script>
+      <!-- Required for Bootstrap Toggle -->
+      <script src="bootstrap-toggle-2.2.2.min.js"> </script>
+
+      <!-- NEW niec Switches Group -->
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" data-toggle="toggle">
+          Option one is enabled
+        </label>
+      </div>
+      <div class="checkbox disabled">
+        <label>
+          <input type="checkbox" disabled data-toggle="toggle">
+          Option two is disabled
+        </label>
+      </div>
 
       <!-- NEW TOGGLE Button Group -->
       <div class="btn-group-toggle" data-toggle="buttons">
