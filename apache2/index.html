@@ -34,7 +34,21 @@
       <div class="custom-switch-content-unchecked">
         Brunnen
       </div>
+      <p></p>
     </div>
+
+    <div class="custom-switch custom-switch-label-onoff">
+      <input class="custom-switch-input" id="swRasensprenger" type="checkbox">
+      <label class="custom-switch-btn" for="swRasensprenger"></label>
+      <div class="custom-switch-content-checked">
+        Rasensprenger
+      </div>
+      <div class="custom-switch-content-unchecked">
+        Rasensprenger
+      </div>
+      <p></p>
+    </div>
+
 
     <!-- Information messages (return codes) -->
     <p></p>
@@ -51,8 +65,32 @@
     $('#swBrunnen').change(function(){
       if($(this).is(":checked")){
         $('#myDiv').hide();
+        $.ajax(
+          {url: "/cgi-bin/test.cgi",
+          success: function( result ) {
+            $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
+            $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+          },
+          error: function ( result) {
+            $( "#ergebnis" ).toggleClass('alert-secondary alert-danger');
+            $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+          }
+
+        });
       } else if($(this).is(":not(:checked)")){
         $('#myDiv').show();
+        $.ajax(
+          {url: "/cgi-bin/test.cgi",
+          success: function( result ) {
+            $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
+            $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+          },
+          error: function ( result) {
+            $( "#ergebnis" ).toggleClass('alert-secondary alert-danger');
+            $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+          }
+
+        });
       }
     });
 
