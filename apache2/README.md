@@ -4,6 +4,5 @@ https://code.jquery.com/jquery-3.3.1.min.js
 Used Bootstrap Version:
 bootstrap-4.1.3.min.js
 
-Used Bootstrap toggle:
-bootstrap-toggle-2.2.2..min.css
-s.a. http://www.bootstraptoggle.com
+Used nice Bootstrap4C:
+https://github.com/haubek/bootstrap4c-custom-switch
