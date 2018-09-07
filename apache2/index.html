@@ -70,15 +70,15 @@
           dataType: "text",
           success: function( result ) {
             if( result == "true" ) {
-              $( "#ergebnis" ).toggleClass('alert-secondary alert-primary');
+              $( "#ergebnis" ).attr('class', 'alert alert-primary');
               $( "#ergebnis" ).html( "Brunnen <strong>eingeschaltet</strong>." );
             } else {
-            $( "#ergebnis" ).toggleClass('alert-secondary alert-danger');
+            $( "#ergebnis" ).attr('class', 'alert alert-danger');
             $( "#ergebnis" ).html( "Gerät <strong>nicht</strong> geschaltet. Fehler: " + result + "." );
             }
           },
           error: function ( result) {
-            $( "#ergebnis" ).toggleClass('alert-secondary alert-danger');
+            $( "#ergebnis" ).attr('class', 'alert alert-danger');
             $( "#ergebnis" ).html( "Gerät <strong>nicht</strong> geschaltet. Fehler: " + result + "." );
           }
 
@@ -89,15 +89,15 @@
           url: "/cgi-bin/test.cgi",
           success: function( result ) {
             if( result == "true" ) {
-              $( "#ergebnis" ).toggleClass('alert-secondary alert-primary');
+              $( "#ergebnis" ).attr('class', 'alert alert-primary');
               $( "#ergebnis" ).html( "Brunnen <strong>ausgeschaltet</strong>." );
             } else {
-            $( "#ergebnis" ).toggleClass('alert-secondary alert-danger');
+            $( "#ergebnis" ).attr('class', 'alert alert-danger');
             $( "#ergebnis" ).html( "Gerät <strong>nicht</strong> geschaltet. Fehler: " + result + "." );
             }
           },
           error: function ( result) {
-            $( "#ergebnis" ).toggleClass('alert-secondary alert-danger');
+            $( "#ergebnis" ).attr('class', 'alert alert-danger');
             $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
           }
 
@@ -107,23 +107,6 @@
 
 
     $(document).ready(function() {
-
-      $("#btnBrunnen").click(function(){
-        $.ajax(
-          {url: "/cgi-bin/test.cgi",
-          success: function( result ) {
-            $( "#btnBrunnen" ).attr('class', 'btn btn-success btn-lg');
-            $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
-            $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
-          },
-          error: function ( result) {
-            $( "#ergebnis" ).toggleClass('alert-secondary alert-danger');
-            $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
-          }
-
-        });
-      });
-
 
     });
 
