@@ -69,15 +69,17 @@
           url: "/cgi-bin/test.cgi",
           dataType: "text",
           success: function( result ) {
-            $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
-            console.log(result);
             if( result == "true" ) {
+              $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
               $( "#ergebnis" ).html( "Brunnen <strong>eingeschaltet</strong>." );
+            } else {
+            $( "#ergebnis" ).toggleClass('alert-secondary alert-danger');
+            $( "#ergebnis" ).html( "Gerät <strong>nicht</strong> geschaltet. Fehler: " + result + "." );
             }
           },
           error: function ( result) {
             $( "#ergebnis" ).toggleClass('alert-secondary alert-danger');
-            $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+            $( "#ergebnis" ).html( "Gerät <strong>nicht</strong> geschaltet. Fehler: " + result + "." );
           }
 
         });
