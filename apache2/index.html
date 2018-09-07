@@ -71,7 +71,7 @@
           success: function( result ) {
             $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
             console.log(result);
-            if( $( result ).text() == "true" ) {
+            if( result == "true" ) {
               $( "#ergebnis" ).html( "Brunnen <strong>eingeschaltet</strong>." );
             }
           },
