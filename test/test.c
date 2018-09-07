@@ -18,7 +18,12 @@ int main(int argc, char *argv[])
   // print a 0 or 1 as "return code"
   srand(time(NULL));   // should only be called once
   int r = rand() % 2;      // returns a pseudo-random integer between 0 and 1
-  printf("%d\n\n", r);
+
+  if (r == 1)
+    printf("true");
+  else
+    printf("false");
+
 
   return 0;
 }
