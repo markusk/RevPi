@@ -69,7 +69,9 @@
           {url: "/cgi-bin/test.cgi",
           success: function( result ) {
             $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
-            $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+            if($(result).is("1")){
+              $( "#ergebnis" ).html( "Brunnen <strong>eingeschaltet</strong>." );
+            }
           },
           error: function ( result) {
             $( "#ergebnis" ).toggleClass('alert-secondary alert-danger');
@@ -94,7 +96,7 @@
       }
     });
 
-    
+
     $(document).ready(function() {
 
       $("#btnBrunnen").click(function(){
