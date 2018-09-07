@@ -70,7 +70,7 @@
           dataType: "text",
           success: function( result ) {
             if( result == "true" ) {
-              $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
+              $( "#ergebnis" ).toggleClass('alert-secondary alert-primary');
               $( "#ergebnis" ).html( "Brunnen <strong>eingeschaltet</strong>." );
             } else {
             $( "#ergebnis" ).toggleClass('alert-secondary alert-danger');
@@ -88,8 +88,13 @@
         $.ajax({
           url: "/cgi-bin/test.cgi",
           success: function( result ) {
-            $( "#ergebnis" ).toggleClass('alert-secondary alert-success');
-            $( "#ergebnis" ).html( "<strong>" + result + "</strong> ist der Rückgabewert." );
+            if( result == "true" ) {
+              $( "#ergebnis" ).toggleClass('alert-secondary alert-primary');
+              $( "#ergebnis" ).html( "Brunnen <strong>ausgeschaltet</strong>." );
+            } else {
+            $( "#ergebnis" ).toggleClass('alert-secondary alert-danger');
+            $( "#ergebnis" ).html( "Gerät <strong>nicht</strong> geschaltet. Fehler: " + result + "." );
+            }
           },
           error: function ( result) {
             $( "#ergebnis" ).toggleClass('alert-secondary alert-danger');
