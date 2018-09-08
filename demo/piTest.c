@@ -549,6 +549,7 @@ void writeVariableValue(char *pszVariableName, uint32_t i32uValue)
 
   strncpy(sPiVariable.strVarName, pszVariableName, sizeof(sPiVariable.strVarName));
   rc = piControlGetVariableInfo(&sPiVariable);
+
   if (rc < 0)
   {
     // cgi-bin compatible output...
@@ -563,10 +564,13 @@ void writeVariableValue(char *pszVariableName, uint32_t i32uValue)
     sPIValue.i8uBit = sPiVariable.i8uBit;
     sPIValue.i8uValue = i32uValue;
     rc = piControlSetBitValue(&sPIValue);
+
     if (rc < 0)
-    // cgi-bin compatible output...
-    printf("Content-Type: text/html;charset=utf-8");
-    printf("Set bit error %s\n", getWriteError(rc));
+    {
+      // cgi-bin compatible output...
+      printf("Content-Type: text/html;charset=utf-8");
+      printf("Set bit error %s\n", getWriteError(rc));
+    }
     else
     {
       printf("Content-Type: text/html;charset=utf-8");
@@ -580,15 +584,20 @@ void writeVariableValue(char *pszVariableName, uint32_t i32uValue)
     {
       i8uValue = i32uValue;
       rc = piControlWrite(sPiVariable.i16uAddress, 1, (uint8_t *) & i8uValue);
+
       if (rc < 0)
-      // cgi-bin compatible output...
-      printf("Content-Type: text/html;charset=utf-8");
-      printf("Write error %s\n", getWriteError(rc));
+      {
+        // cgi-bin compatible output...
+        printf("Content-Type: text/html;charset=utf-8");
+        printf("Write error %s\n", getWriteError(rc));
+      }
       else
-      // cgi-bin compatible output...
-      printf("Content-Type: text/html;charset=utf-8");
-      printf("Write value %d dez (=%02x hex) to offset %d.\n", i8uValue, i8uValue,
-      sPiVariable.i16uAddress);
+      {
+        // cgi-bin compatible output...
+        printf("Content-Type: text/html;charset=utf-8");
+        printf("Write value %d dez (=%02x hex) to offset %d.\n", i8uValue, i8uValue,
+        sPiVariable.i16uAddress);
+      }
     }
     else
     {
@@ -596,6 +605,7 @@ void writeVariableValue(char *pszVariableName, uint32_t i32uValue)
       {
         i16uValue = i32uValue;
         rc = piControlWrite(sPiVariable.i16uAddress, 2, (uint8_t *) & i16uValue);
+
         if (rc < 0)
         {
           // cgi-bin compatible output...
@@ -613,6 +623,7 @@ void writeVariableValue(char *pszVariableName, uint32_t i32uValue)
         if (sPiVariable.i16uLength == 32)
         {
           rc = piControlWrite(sPiVariable.i16uAddress, 4, (uint8_t *) & i32uValue);
+
           if (rc < 0)
           {
             // cgi-bin compatible output...
