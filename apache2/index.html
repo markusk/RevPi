@@ -66,7 +66,7 @@
       if($(this).is(":checked")){
         $('#myDiv').hide();
         $.ajax({
-          url: "/cgi-bin/test.cgi",
+          url: "/cgi-bin/piTest.cgi -w Brunnen,1",
           dataType: "text",
           success: function( result ) {
             if( result == "true" ) {
@@ -86,7 +86,7 @@
       } else if($(this).is(":not(:checked)")){
         $('#myDiv').show();
         $.ajax({
-          url: "/cgi-bin/test.cgi",
+          url: "/cgi-bin/piTest.cgi -w Brunnen,0",
           success: function( result ) {
             if( result == "true" ) {
               $( "#ergebnis" ).attr('class', 'alert alert-primary');
