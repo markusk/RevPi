@@ -66,8 +66,10 @@
       if($(this).is(":checked")){
         $('#myDiv').hide();
         $.ajax({
-          url: "/cgi-bin/piTest.cgi -w Brunnen,1",
+          url: "/cgi-bin/piTest.cgi",
+          type: 'post',
           dataType: "text",
+          data: JSON.stringify({"-w": readwrite, "Brunnen": relais, "1": anaus}),
           success: function( result ) {
             if( result == "true" ) {
               $( "#ergebnis" ).attr('class', 'alert alert-primary');
