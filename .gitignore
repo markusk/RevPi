@@ -1,5 +1,7 @@
- demo/obj/*
- demo/piTest
- test/obj/*
- test/test.cgi
- apache2/www
+*.o
+
+demo/obj/
+demo/piTest
+test/obj/
+test/test.cgi
+apache2/www
