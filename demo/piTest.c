@@ -839,6 +839,15 @@ int main(int argc, char *argv[])
     char szVariableName[256];
     char *pszTok, *progname;
 
+
+    //------------------------------------------------------
+    // debugging for gettingserver arguments
+    //------------------------------------------------------
+    printf("Content-Type: text/html;charset=utf-8");
+    printf("argument 0 is: %s\n", argv[0]);
+    //------------------------------------------------------
+
+
     progname = strrchr(argv[0], '/');
     if (!progname) {
 	progname = argv[0];
