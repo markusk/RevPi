@@ -1,0 +1,27 @@
+{
+	"bridge": {
+		"name": "RevPiHomebridge",
+		"username": "CC:22:3D:E3:CE:32",
+		"port": 51826,
+		"pin": "031-45-156"
+	},
+	"description": "Meine RevPi HomeBridge",
+	"accessories": [{
+		"accessory": "RevPiDO",
+		"name": "Brunnen",
+		"output_name": "Brunnen",
+		"type": "switch"
+	},
+	{
+		"accessory": "RevPiDO",
+		"name": "Rasensprenger",
+		"output_name": "O_2",
+		"type": "switch"
+	},
+	{
+		"accessory": "RevPiCore",
+		"name": "RevPi"
+	}
+	],
+	"platforms": []
+}
